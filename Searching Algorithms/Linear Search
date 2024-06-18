@@ -1,0 +1,5 @@
+Linear Search:
+Description: Scans each element in the list sequentially until the desired element is found or the list ends.
+Best Use Case: Unsorted or small lists.
+Time Complexity: O(n)
+Space Complexity: O(1)
