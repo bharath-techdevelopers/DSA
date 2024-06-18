@@ -1,0 +1,45 @@
+Interpolation Search:
+Description:
+	   Interpolation search is an improvement over binary search for uniformly distributed datasets. 
+	   Instead of dividing the search interval in half, it uses a formula to estimate the position of the target value, making it faster for some cases.
+Formula Derivation:
+	conisder a list L=[],val to search
+	let ind be the i.e., L[ind}=val
+		low=0
+		high=len(L)-1
+	points to be consider as p1(L[low],low) and p2(L[high],high) 
+	p3(L[ind]/val,ind)
+we know the line formula for p(x,y) as y=mx+c
+applying the formula for p1,p2,p3:
+				L[low]=m*(low)+c------eq1
+				L[high]=m*(high)+c----eq2
+				val=m*(ind)+c---------eq3
+	solve eq1-eq2,
+			L[low]-L[high]=(low-high)m
+			from this we can find: m=L[low]-L[high]
+						 ---------------
+						   (low-high)
+
+	solve eq1-eq3,
+			L[low]-val=(low-ind)m------eq4
+			susbstitute the 'm' value in eq4
+			then,
+				l[low]-val=(low-ind)*(L[low]-L[high])
+					   -------------------------	--------eq5
+                                                 (low-high)
+
+      			from eq5, 
+				(low-ind)   =	(L[low]-val)*(low-high)
+					  	---------------------------
+					      	    (L[low]-L[high])
+		
+				ind-low     =	(low-high)*(val-L[low])
+						------------------------
+					   	   (L[low]-L[high])	
+				
+				ind         =    (low-high)*(val-L[low])
+						-------------------------- +low
+						     (L[low]-L[high])
+
+To write the formula in compiler:
+ ind=int(low+((low-high)/(L[low]-L[high]))*(val-L[low]))
