@@ -1,0 +1,5 @@
+Binary Search:
+Description: Divides the sorted list into halves and compares the target with the middle element, reducing the search interval by half each time.
+Best Use Case: Sorted lists.
+Time Complexity: O(log n)
+Space Complexity: O(1) for iterative, O(log n) for recursive
